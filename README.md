@@ -54,39 +54,30 @@ Express server.js (:5000)
 
 ```
 weather-app/
-├── backend/
-│   ├── server.js           ← Express API principal
-│   ├── weatherService.js   ← procesare meteo (SEPARAT de afisare)
-│   ├── .env                ← variabile de mediu (cheia API)
-│   └── images/             ← imagini statice (optional)
-├── frontend/
+├── backend/                ← Serviciul de API (Render) 
+│   ├── public/             
+│   │   └── .gitkeep        ← Forțează Git să urmărească folderul public 
+│   ├── server.js           ← Express API principal (configurat CORS pt Vercel) 
+│   ├── weatherService.js   ← Logica de procesare meteo (SEPARATĂ de afișare)
+│   ├── .env                ← OPENWEATHER_API_KEY (privat)
+│   └── images/             ← Imagini statice servite de Express
+├── frontend/               ← Interfața utilizator (Vercel) 
 │   ├── src/
 │   │   ├── api/
-│   │   │   └── weatherApi.js   ← toate apelurile fetch catre backend
-│   │   ├── components/
-│   │   │   ├── SearchBar.jsx
-│   │   │   ├── CurrentWeather.jsx
-│   │   │   ├── HourlyForecast.jsx
-│   │   │   ├── DailyForecast.jsx
-│   │   │   ├── LoadingSkeleton.jsx
-│   │   │   └── Navbar.jsx
-│   │   ├── hooks/
-│   │   │   └── useWeather.js   ← hook custom pentru datele meteo
+│   │   │   └── weatherApi.js ← Folosește VITE_API_URL pentru fetch 
+│   │   ├── components/     ← SearchBar, CurrentWeather, Navbar, etc.
 │   │   ├── pages/
 │   │   │   ├── WeatherPage.jsx
-│   │   │   ├── HistoryPage.jsx
-│   │   │   └── FavoritesPage.jsx
-│   │   ├── utils/
-│   │   │   └── weatherUtils.js ← utilitare frontend (formatare)
-│   │   ├── App.jsx
-│   │   ├── main.jsx
-│   │   └── index.css       ← Tailwind v4 + tema custom
-│   ├── index.html
+│   │   │   ├── Historypage.jsx 
+│   │   │   └── Favoritespage.jsx
+│   │   ├── App.jsx         ← Configurare rute (React Router)
+│   │   └── index.css       ← Tailwind v4 + Font-uri Google
+│   ├── vercel.json         
 │   ├── vite.config.js
-│   └── package.json
-├── db.json                 ← baza de date json-server
-├── package.json            ← scripturile principale
-└── .gitignore
+│   └── package.json        ← Dependențe frontend
+├── db.json                 ← Baza de date efemeră pe Render (căutări + favorite) 
+├── package.json            ← Scripturi de start (folosesc concurrently) 
+└── .gitignore              ← Include node_modules și .env.local
 ```
 
 ---
