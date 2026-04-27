@@ -26,7 +26,7 @@ const app = express();
 app.use(cors({
   origin: [
     "https://weather-app-ywij.vercel.app", // Link-ul de productie principal
-    "https://weather-app-ywij-9k3g48nz4-android-33s-projects.vercel.app", // Link-ul exact pe care esti acum
+    "https://weather-app-ywij-77a9bxa14-andreid-33s-projects.vercel.app/", // Link-ul exact pe care esti acum
     "http://localhost:5173"
   ]
 }));
