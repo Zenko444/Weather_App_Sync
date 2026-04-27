@@ -12,7 +12,7 @@ import { BrowserRouter, Routes, Route, useLocation, useSearchParams } from "reac
 import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import WeatherPage from "./pages/WeatherPage";
-import HistoryPage from "./pages/HistoryPage";
+import HistoryPage from "./pages/Historypage";
 import FavoritesPage from "./pages/FavoritesPage";
 
 /**
