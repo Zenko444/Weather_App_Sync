@@ -25,11 +25,11 @@ const app = express();
 // Configurare CORS pentru a permite cereri din Vercel si din localhost 
 app.use(cors({
   origin: [
-    "https://weather-app-frontend.vercel.app", // INLOCUIESTE ASTA CU LINK-UL TAU VERCEL REAL CAND IL AI!
+    "https://weather-app-ywij.vercel.app", // Link-ul de productie principal
+    "https://weather-app-ywij-9k3g48nz4-android-33s-projects.vercel.app", // Link-ul exact pe care esti acum
     "http://localhost:5173"
   ]
 }));
-
 app.use(express.json());
 
 // Ruta statica pentru imagini (similar cu citate-autori)
